@@ -11,6 +11,8 @@ builder.Services.AddDbContext<AppDbContext>(Options =>
     Options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
+builder.Services.AddScoped<IPostService, PostServices>();
+
 
 var app = builder.Build();
 
